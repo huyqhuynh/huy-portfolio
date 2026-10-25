@@ -5,7 +5,7 @@ export default function Case3Sql() {
   return (
     <CaseShell
       title="SQL-Powered Audience Segmentation"
-      summary="Selecting the right audience is part of email development. This query pulls consented, age-verified wine and spirits customers who have gone quiet, then narrows by category and engagement."
+      summary="Choosing who gets the email is part of the job. This query finds consented, age-verified customers who have gone quiet, then narrows by category and engagement."
       skills={['SQL', 'Query Activities', 'Data extensions', 'Segmentation']}
     >
       <Block title="Try it · change the filters and watch the query and results update">

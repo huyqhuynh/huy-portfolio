@@ -6,14 +6,14 @@ export default function Resume() {
   return (
     <section id="resume" className="section border-t border-line bg-ink-900/40" aria-labelledby="resume-h">
       <div className="wrap">
-        <SectionHeading id="resume-h" eyebrow="06 · Resume" title="The short version, in one file." />
+        <SectionHeading id="resume-h" eyebrow="06 · Resume" title="Prefer a resume?" />
         <div className="grid gap-5 lg:grid-cols-[1.2fr_1fr]">
           <div className="card flex flex-col items-start gap-5 p-6 md:p-8">
             <FileText className="text-cyan" size={32} aria-hidden />
             <p className="max-w-md text-base leading-7 text-slate-300">
               {resumeCta.download
-                ? 'Titles, dates, and skills match this site. Download the PDF for a printable copy.'
-                : 'My full resume is available online, with the same titles, dates, and skills as this site.'}
+                ? 'Same titles, dates, and skills as this site, in a PDF you can print or forward.'
+                : 'My resume is online, with the same titles, dates, and skills as this site.'}
             </p>
             <a
               href={resumeCta.href}

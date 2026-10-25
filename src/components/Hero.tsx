@@ -22,7 +22,7 @@ export default function Hero() {
             <span className="bg-gradient-to-r from-cyan to-azure bg-clip-text text-transparent">Beyond the Inbox.</span>
           </h1>
           <p className="mt-6 max-w-xl text-lg leading-8 text-slate-300">
-            I build responsive email experiences, scalable templates, and personalized marketing campaigns using HTML, CSS, Salesforce Marketing Cloud, AMPscript, and SQL.
+            I've been building email since 2012, back when getting Outlook to behave was practically a sport. These days I build responsive emails, reusable templates, and Salesforce Marketing Cloud automation that help marketing teams get campaigns out the door.
           </p>
           <ul className="mt-4 flex flex-wrap gap-x-4 gap-y-1 font-mono text-sm text-cyan/90" aria-label="Specialties">
             {['Responsive HTML/CSS', 'SFMC personalization', 'SQL segmentation', 'Litmus QA'].map((t) => (

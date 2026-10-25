@@ -12,7 +12,7 @@ export default function Case2Ampscript() {
   return (
     <CaseShell
       title="Salesforce Marketing Cloud Personalization"
-      summary="One template, many outcomes. This example uses AMPscript for conditional content, derived values, and fallbacks so no subscriber receives a broken greeting."
+      summary="One template, many outcomes. This uses AMPscript for conditional content, derived values, and fallbacks, so nobody gets an email that opens with &quot;Hi ,&quot;."
       skills={['AMPscript', 'SFMC', 'Dynamic content', 'Fallback handling']}
     >
       <Block title="Data → logic → email">

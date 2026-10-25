@@ -5,8 +5,8 @@ export default function Experience() {
   return (
     <section id="experience" className="section border-t border-line bg-ink-900/40" aria-labelledby="exp-h">
       <div className="wrap">
-        <SectionHeading id="exp-h" eyebrow="04 · Experience" title="Agency scale and in-house depth.">
-          Enterprise client work at an agency, followed by eight years owning email production in-house.
+        <SectionHeading id="exp-h" eyebrow="04 · Experience" title="Agency first, then in-house.">
+          Almost five years at an agency on enterprise clients, then eight years running email production in-house.
         </SectionHeading>
 
         <ol className="relative space-y-6 border-l border-line pl-6 md:pl-10">
@@ -26,7 +26,7 @@ export default function Experience() {
                 </ul>
                 {'clients' in e && (
                   <p className="mt-4 text-sm leading-6 text-muted">
-                    <span className="font-medium text-slate-300">Agency client programs:</span> {e.clients.join(', ')}. Work was delivered through Merkle for these clients, not as an employee of the brands.
+                    <span className="font-medium text-slate-300">Agency client programs:</span> {e.clients.join(', ')}. I worked on these through Merkle, not as an employee of the brands.
                   </p>
                 )}
                 <ul className="mt-4 flex flex-wrap gap-2" aria-label="Technologies">

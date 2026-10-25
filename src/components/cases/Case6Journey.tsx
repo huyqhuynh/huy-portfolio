@@ -15,7 +15,7 @@ export default function Case6Journey() {
   return (
     <CaseShell
       title="Marketing Automation Journey"
-      summary="A welcome-and-first-purchase flow showing how entry criteria, waits, decision splits, and sends fit together. Open any step to see the data it uses and the logic behind it."
+      summary="A welcome and first-purchase flow showing how entry criteria, waits, splits, and sends fit together. Open any step to see the data it uses and why it's there."
       skills={['Journey Builder', 'Decision splits', 'Segmentation', 'Personalization']}
       tag="Representative demo · not a client project"
     >

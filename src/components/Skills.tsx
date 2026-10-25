@@ -11,8 +11,8 @@ export default function Skills() {
   return (
     <section id="skills" className="section border-t border-line" aria-labelledby="skills-h">
       <div className="wrap">
-        <SectionHeading id="skills-h" eyebrow="01 · Technical skills" title="What I work with, and how deeply.">
-          Skills are grouped by area and tagged by depth. No percentages, because depth is easier to judge from the code below.
+        <SectionHeading id="skills-h" eyebrow="01 · Technical skills" title="What I work with, and how well.">
+          Grouped by area and tagged by how much I actually use them. No percentage bars. The code below says more.
         </SectionHeading>
 
         <ul className="mb-8 flex flex-wrap gap-x-6 gap-y-2 text-sm" aria-label="Skill depth legend">

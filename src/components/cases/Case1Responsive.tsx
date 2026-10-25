@@ -10,7 +10,7 @@ export default function Case1Responsive() {
   return (
     <CaseShell
       title="Responsive Enterprise Email System"
-      summary="A single-column, table-based layout that holds up in Outlook and stacks cleanly on phones. Built from modules so a new campaign is mostly new copy, not new code."
+      summary="A table-based layout that holds up in Outlook and stacks cleanly on phones. Built from modules, so a new campaign is mostly new copy, not new code."
       skills={['HTML5', 'CSS', 'Table layouts', 'Outlook fixes', 'Accessibility']}
     >
       <Block title="Live preview · toggle the width">

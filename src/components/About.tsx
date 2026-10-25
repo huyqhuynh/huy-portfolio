@@ -1,10 +1,10 @@
 import { SectionHeading } from './ui'
 
 const values = [
-  ['Clean code', 'Readable, commented, and easy for the next developer to pick up.'],
-  ['Efficient workflows', 'Modules and checklists so the second campaign takes less effort than the first.'],
-  ['Problem solving', 'I like the rendering bug nobody can explain, and tracing it to the line that causes it.'],
-  ['Continuous improvement', 'Every send teaches something. I keep the fixes and fold them into the templates.'],
+  ['Clean code', 'Readable, commented, and easy for the next person to pick up.'],
+  ['Less repetition', 'Modules and checklists, so the second campaign is easier than the first.'],
+  ['Debugging', 'I like tracing a weird rendering bug back to the one line causing it.'],
+  ['Always improving', 'Every send teaches something. I keep the fixes and fold them into the templates.'],
 ]
 
 export default function About() {
@@ -12,16 +12,16 @@ export default function About() {
     <section id="about" className="section border-t border-line" aria-labelledby="about-h">
       <div className="wrap grid gap-10 lg:grid-cols-[1.1fr_1fr]">
         <div>
-          <SectionHeading id="about-h" eyebrow="05 · About" title="A developer who understands the campaign." />
+          <SectionHeading id="about-h" eyebrow="05 · About" title="I write the code, and I know what it's for." />
           <div className="space-y-4 text-base leading-8 text-slate-300">
             <p>
-              I'm a hands-on email developer with 13+ years of experience turning marketing requirements into responsive, reliable email experiences.
+              I'm a hands-on email developer with 13+ years of experience turning marketing requirements into responsive, reliable email.
             </p>
             <p>
-              I enjoy solving the tricky stuff: rendering inconsistencies, dynamic content, reusable templates, personalization logic, and the technical details that make campaigns work across email clients.
+              I like the tricky stuff: rendering quirks, dynamic content, personalization logic, and figuring out why something works everywhere except that one email client.
             </p>
             <p>
-              I've worked on both sides of the business: at an enterprise agency and in-house at a national retailer. That means I know the code, and I know what the marketing team needs it to do.
+              I've worked at an enterprise agency and in-house at a national retailer, so I know the code and what the marketing team needs it to do. If there's a repetitive task worth automating, I'm probably already thinking about it.
             </p>
           </div>
         </div>

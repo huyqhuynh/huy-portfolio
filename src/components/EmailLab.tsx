@@ -47,7 +47,7 @@ export default function EmailLab() {
     <section id="lab" className="section border-t border-line" aria-labelledby="lab-h">
       <div className="wrap">
         <SectionHeading id="lab-h" eyebrow="03 · Email lab" title="Read the source, then see what it does.">
-          A working sandbox with a fictional brand and synthetic data. Switch the email, resize the preview, and inspect the exact HTML behind it.
+          A small sandbox with a fictional brand and made-up data. Switch the email, resize the preview, and read the exact HTML behind it.
         </SectionHeading>
 
         <div className="card p-5 md:p-8">

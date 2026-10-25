@@ -13,7 +13,7 @@ export default function Contact() {
     <section id="contact" className="section border-t border-line" aria-labelledby="contact-h">
       <div className="wrap">
         <SectionHeading id="contact-h" eyebrow="07 · Contact" title="Let's talk email development.">
-          I'm interested in email development and marketing technology roles. Email is the fastest way to reach me.
+          If you're hiring for email development or marketing technology, or just want to talk shop, I'd be glad to hear from you. Email is the fastest way to reach me.
         </SectionHeading>
         <ul className="grid gap-4 md:grid-cols-3">
           {items.map(({ Icon, label, value, href, ext }) => (

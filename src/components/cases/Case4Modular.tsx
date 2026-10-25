@@ -23,7 +23,7 @@ export default function Case4Modular() {
   return (
     <CaseShell
       title="Modular Email Template Architecture"
-      summary="Reusable modules assembled into any campaign. Change the inputs, not the structure. The demo below uses a fictional brand. Beneath it is the module map from my real production templates."
+      summary="Reusable modules assembled into any campaign. Change the inputs, not the structure. The demo uses a fictional brand. Below it is the module map from my real production templates."
       skills={['Modular templates', 'Content Builder patterns', 'QA consistency', 'Scalability']}
     >
       <div className="grid gap-6 lg:grid-cols-[1fr_1.1fr]">

@@ -9,7 +9,7 @@ export const levels: Record<Level, { label: string; note: string }> = {
 export const skillGroups: { title: string; blurb: string; items: { name: string; level: Level }[] }[] = [
   {
     title: 'Email Development',
-    blurb: 'The craft: code that survives every inbox.',
+    blurb: 'Code that has to work in every inbox, including the difficult ones.',
     items: [
       { name: 'HTML5', level: 'hands-on' },
       { name: 'CSS', level: 'hands-on' },
@@ -23,7 +23,7 @@ export const skillGroups: { title: string; blurb: string; items: { name: string;
   },
   {
     title: 'Salesforce Marketing Cloud',
-    blurb: 'Data, logic, and automation behind the send.',
+    blurb: 'The data, logic, and automation behind the send.',
     items: [
       { name: 'SFMC / ExactTarget', level: 'hands-on' },
       { name: 'AMPscript', level: 'hands-on' },
@@ -38,7 +38,7 @@ export const skillGroups: { title: string; blurb: string; items: { name: string;
   },
   {
     title: 'QA & Optimization',
-    blurb: 'Catching problems before subscribers do.',
+    blurb: 'Finding the problems before subscribers do.',
     items: [
       { name: 'Litmus', level: 'hands-on' },
       { name: 'Rendering Testing', level: 'hands-on' },
@@ -50,7 +50,7 @@ export const skillGroups: { title: string; blurb: string; items: { name: string;
   },
   {
     title: 'Additional Technologies',
-    blurb: 'Adjacent tools and platforms.',
+    blurb: 'Other tools I have used, some more than others.',
     items: [
       { name: 'Klaviyo', level: 'exposure' },
       { name: 'Adobe Journey Optimizer', level: 'exposure' },

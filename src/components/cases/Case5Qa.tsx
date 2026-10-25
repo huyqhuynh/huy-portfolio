@@ -13,7 +13,7 @@ export default function Case5Qa() {
   return (
     <CaseShell
       title="Email QA and Cross-Client Debugging"
-      summary="Four rendering problems I see again and again, with the cause and the fix. Where a browser can show the bug, the before and after render live. Where it only appears in Outlook, I say so."
+      summary="Four rendering problems I run into again and again, with the cause and the fix. Where a browser can show the bug, the before and after render live. Where it only shows up in Outlook, I'll say so."
       skills={['Litmus', 'Outlook fixes', 'Rendering QA', 'Troubleshooting']}
     >
       <Block title="Pick a problem">

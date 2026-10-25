@@ -24,8 +24,8 @@ export default function Projects() {
   return (
     <section id="work" className="section border-t border-line bg-ink-900/40" aria-labelledby="work-h">
       <div className="wrap">
-        <SectionHeading id="work-h" eyebrow="02 · Featured work" title="Technical case studies you can poke at.">
-          Six code-level studies of how I approach real email problems. They are illustrative demonstrations built with a fictional brand and synthetic data. They are not descriptions of client projects, and no client code or results are shown.
+        <SectionHeading id="work-h" eyebrow="02 · Featured work" title="Work you can click around in.">
+          Six demos of how I approach email problems. They use a fictional brand and made-up data, so they aren't client projects and don't show client code or results. The modular case study also shows how my real production templates were organized (structure only).
         </SectionHeading>
 
         <div className="grid grid-cols-[minmax(0,1fr)] gap-8 lg:grid-cols-[17rem_minmax(0,1fr)]">

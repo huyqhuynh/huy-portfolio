@@ -21,17 +21,17 @@ export interface Variant {
 export const variants: Variant[] = [
   {
     id: 'seasonal',
-    label: 'Seasonal launch',
-    accent: '#b45309',
+    label: 'Seasonal picks',
+    accent: '#9f1239',
     accentText: '#ffffff',
     eyebrow: 'New this fall',
-    headline: 'Maple Smoke Blend is here.',
-    body: 'A medium roast with toasted maple and cocoa notes. Small batch, roasted weekly.',
-    ctaLabel: 'Shop the blend',
-    preheader: 'Our fall roast just landed.',
+    headline: 'Cellar picks for cooler nights.',
+    body: 'Rich reds and warm-spiced spirits, chosen by our team for the season.',
+    ctaLabel: 'Shop the picks',
+    preheader: 'Our fall selections just arrived.',
     cards: [
-      { name: 'Maple Smoke', note: '12 oz · whole bean', tone: '#7c4a21' },
-      { name: 'Hearth Blend', note: '12 oz · ground', tone: '#5b3a29' },
+      { name: 'Hers Red Blend', note: '750 ml · red wine', tone: '#7f1d1d' },
+      { name: 'His Reserve Bourbon', note: '750 ml · bourbon', tone: '#78350f' },
     ],
   },
   {
@@ -40,13 +40,13 @@ export const variants: Variant[] = [
     accent: '#0f766e',
     accentText: '#ffffff',
     eyebrow: 'This weekend only',
-    headline: '20% off whole-bean bags.',
-    body: 'Stock up on favorites. Offer runs Saturday and Sunday on select roasts.',
+    headline: '20% off select cases.',
+    body: 'Stock up on favorites. Offer runs Saturday and Sunday on selected wines.',
     ctaLabel: 'See the offer',
-    preheader: 'Two days. Select roasts.',
+    preheader: 'Two days. Selected wines.',
     cards: [
-      { name: 'Morning Ridge', note: '12 oz · whole bean', tone: '#115e59' },
-      { name: 'Cedar Dark', note: '12 oz · whole bean', tone: '#134e4a' },
+      { name: 'Coastal White', note: '750 ml · case of 6', tone: '#115e59' },
+      { name: 'Ridge Rosé', note: '750 ml · case of 6', tone: '#134e4a' },
     ],
   },
   {
@@ -55,12 +55,12 @@ export const variants: Variant[] = [
     accent: '#1d4ed8',
     accentText: '#ffffff',
     eyebrow: 'Rewards',
-    headline: 'You are close to a free bag.',
-    body: 'Your points are almost there. Redeem them on any roast, online or in store.',
+    headline: 'You are close to a free bottle.',
+    body: 'Your points are almost there. Redeem them on any bottle, online or in store.',
     ctaLabel: 'View my rewards',
-    preheader: 'Your next bag may be free.',
+    preheader: 'Your next bottle may be free.',
     cards: [
-      { name: 'Earn 2x points', note: 'On subscriptions', tone: '#1e3a8a' },
+      { name: 'Earn 2x points', note: 'On featured picks', tone: '#1e3a8a' },
       { name: 'Redeem anywhere', note: 'Online or in store', tone: '#1e40af' },
     ],
   },
@@ -82,7 +82,7 @@ export function moduleHtml(id: ModuleId, v: Variant): string {
       return `<!-- MODULE: header -->
 <tr>
   <td class="px" style="padding:20px 32px;background:#ffffff;${font}font-size:18px;font-weight:bold;color:#1f1612;">
-    Alder &amp; Oak <span style="color:${v.accent};">Roasters</span>
+    Harbor &amp; <span style="color:${v.accent};">Hearth</span>
   </td>
 </tr>`
     case 'hero':
@@ -128,7 +128,7 @@ ${v.cards.map((c, i) => `        <td class="stack" width="50%" valign="top" styl
       return `<!-- MODULE: footer -->
 <tr>
   <td class="px" style="padding:24px 32px;background:#efe9e2;${font}font-size:12px;line-height:18px;color:#5f544c;">
-    Alder &amp; Oak Roasters is a fictional brand used for this demonstration.<br>
+    Harbor &amp; Hearth is a fictional brand used for this demonstration. Must be 21+ to purchase.<br>
     100 Example Street, Sample City<br>
     <a href="https://example.com/unsubscribe" style="color:#5f544c;">Unsubscribe</a> ·
     <a href="https://example.com/preferences" style="color:#5f544c;">Preferences</a>

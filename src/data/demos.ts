@@ -26,9 +26,9 @@ ENDIF
 /* 3. Derived value */
 SET @toGo = Subtract(500, @points)
 IF @toGo > 0 THEN
-  SET @rewardLine = Concat(@toGo, " points to your next free bag")
+  SET @rewardLine = Concat(@toGo, " points to your next free bottle")
 ELSE
-  SET @rewardLine = "You have a free bag waiting"
+  SET @rewardLine = "You have a free bottle waiting"
 ENDIF
 
 /* 4. Location with graceful fallback */
@@ -56,37 +56,39 @@ export function renderPersonalization(s: Subscriber) {
     : s.LoyaltyTier === 'Silver' ? 'Free shipping on orders over $50'
     : 'Join Rewards to unlock free shipping'
   const toGo = 500 - points
-  const rewardLine = toGo > 0 ? `${toGo} points to your next free bag` : 'You have a free bag waiting'
+  const rewardLine = toGo > 0 ? `${toGo} points to your next free bottle` : 'You have a free bottle waiting'
   const storeLine = s.City ? `Pick up in ${s.City}` : 'Find a shop near you'
   return { first, offer, rewardLine, storeLine }
 }
 
 /* ---------- SQL segmentation ---------- */
+export type Category = 'Wine' | 'Whiskey' | 'Beer' | 'Tequila'
 export interface Member {
-  key: string; email: string; first: string; tier: 'Gold' | 'Silver' | 'Bronze'
-  optIn: boolean; purchaseDaysAgo: number; openDaysAgo: number
+  key: string; email: string; category: Category
+  optIn: boolean; ageVerified: boolean; purchaseDaysAgo: number; openDaysAgo: number
 }
 
+// Synthetic customers of a fictional wine & spirits retailer.
 export const members: Member[] = [
-  { key: 'S-1001', email: 'user01@example.com', first: 'Maya', tier: 'Gold', optIn: true, purchaseDaysAgo: 75, openDaysAgo: 12 },
-  { key: 'S-1002', email: 'user02@example.com', first: 'Devon', tier: 'Silver', optIn: true, purchaseDaysAgo: 20, openDaysAgo: 5 },
-  { key: 'S-1003', email: 'user03@example.com', first: 'Priya', tier: 'Bronze', optIn: true, purchaseDaysAgo: 140, openDaysAgo: 60 },
-  { key: 'S-1004', email: 'user04@example.com', first: 'Leo', tier: 'Gold', optIn: false, purchaseDaysAgo: 90, openDaysAgo: 30 },
-  { key: 'S-1005', email: 'user05@example.com', first: 'Sam', tier: 'Silver', optIn: true, purchaseDaysAgo: 64, openDaysAgo: 80 },
-  { key: 'S-1006', email: 'user06@example.com', first: 'Ines', tier: 'Silver', optIn: true, purchaseDaysAgo: 110, openDaysAgo: 200 },
-  { key: 'S-1007', email: 'user07@example.com', first: 'Omar', tier: 'Bronze', optIn: true, purchaseDaysAgo: 15, openDaysAgo: 3 },
-  { key: 'S-1008', email: 'user08@example.com', first: 'Chloe', tier: 'Gold', optIn: true, purchaseDaysAgo: 61, openDaysAgo: 95 },
-  { key: 'S-1009', email: 'user09@example.com', first: 'Ravi', tier: 'Gold', optIn: true, purchaseDaysAgo: 33, openDaysAgo: 8 },
-  { key: 'S-1010', email: 'user10@example.com', first: 'Nina', tier: 'Silver', optIn: false, purchaseDaysAgo: 80, openDaysAgo: 20 },
-  { key: 'S-1011', email: 'user11@example.com', first: 'Tom', tier: 'Bronze', optIn: true, purchaseDaysAgo: 200, openDaysAgo: 150 },
-  { key: 'S-1012', email: 'user12@example.com', first: 'Zoe', tier: 'Silver', optIn: true, purchaseDaysAgo: 88, openDaysAgo: 40 },
+  { key: 'C-1001', email: 'user01@example.com', category: 'Wine', optIn: true, ageVerified: true, purchaseDaysAgo: 75, openDaysAgo: 12 },
+  { key: 'C-1002', email: 'user02@example.com', category: 'Whiskey', optIn: true, ageVerified: true, purchaseDaysAgo: 20, openDaysAgo: 5 },
+  { key: 'C-1003', email: 'user03@example.com', category: 'Beer', optIn: true, ageVerified: true, purchaseDaysAgo: 140, openDaysAgo: 60 },
+  { key: 'C-1004', email: 'user04@example.com', category: 'Wine', optIn: false, ageVerified: true, purchaseDaysAgo: 90, openDaysAgo: 30 },
+  { key: 'C-1005', email: 'user05@example.com', category: 'Whiskey', optIn: true, ageVerified: true, purchaseDaysAgo: 64, openDaysAgo: 80 },
+  { key: 'C-1006', email: 'user06@example.com', category: 'Tequila', optIn: true, ageVerified: true, purchaseDaysAgo: 110, openDaysAgo: 200 },
+  { key: 'C-1007', email: 'user07@example.com', category: 'Beer', optIn: true, ageVerified: true, purchaseDaysAgo: 15, openDaysAgo: 3 },
+  { key: 'C-1008', email: 'user08@example.com', category: 'Wine', optIn: true, ageVerified: true, purchaseDaysAgo: 61, openDaysAgo: 95 },
+  { key: 'C-1009', email: 'user09@example.com', category: 'Tequila', optIn: true, ageVerified: true, purchaseDaysAgo: 33, openDaysAgo: 8 },
+  { key: 'C-1010', email: 'user10@example.com', category: 'Whiskey', optIn: true, ageVerified: false, purchaseDaysAgo: 80, openDaysAgo: 20 },
+  { key: 'C-1011', email: 'user11@example.com', category: 'Beer', optIn: true, ageVerified: true, purchaseDaysAgo: 200, openDaysAgo: 150 },
+  { key: 'C-1012', email: 'user12@example.com', category: 'Whiskey', optIn: true, ageVerified: true, purchaseDaysAgo: 88, openDaysAgo: 40 },
 ]
 
-export interface SegmentFilters { tiers: string[]; lapsedDays: number; engagedDays: number | null }
+export interface SegmentFilters { categories: string[]; lapsedDays: number; engagedDays: number | null }
 
 export function matches(m: Member, f: SegmentFilters): boolean {
-  if (!m.optIn) return false
-  if (f.tiers.length && !f.tiers.includes(m.tier)) return false
+  if (!m.optIn || !m.ageVerified) return false
+  if (f.categories.length && !f.categories.includes(m.category)) return false
   if (!(m.purchaseDaysAgo > f.lapsedDays)) return false
   if (f.engagedDays !== null && !(m.openDaysAgo <= f.engagedDays)) return false
   return true
@@ -95,18 +97,18 @@ export function matches(m: Member, f: SegmentFilters): boolean {
 export function buildSql(f: SegmentFilters): string {
   const lines = [
     '-- Illustrative example · synthetic data extension and field names',
-    '-- Goal: opted-in members who have not purchased recently',
+    '-- Goal: consented, age-verified customers who have not purchased recently',
     'SELECT',
-    '  s.SubscriberKey,',
-    '  s.EmailAddress,',
-    '  s.FirstName,',
-    '  s.LoyaltyTier',
-    'FROM Members s',
-    'WHERE s.OptIn = 1',
+    '  c.SubscriberKey,',
+    '  c.EmailAddress,',
+    '  c.PreferredCategory',
+    'FROM Customers c',
+    'WHERE c.OptIn = 1',
+    '  AND c.AgeVerified = 1',
   ]
-  if (f.tiers.length) lines.push(`  AND s.LoyaltyTier IN (${f.tiers.map((t) => `'${t}'`).join(', ')})`)
-  lines.push(`  AND s.LastPurchaseDate < DATEADD(day, -${f.lapsedDays}, GETDATE())`)
-  if (f.engagedDays !== null) lines.push(`  AND s.LastOpenDate >= DATEADD(day, -${f.engagedDays}, GETDATE())`)
+  if (f.categories.length) lines.push(`  AND c.PreferredCategory IN (${f.categories.map((t) => `'${t}'`).join(', ')})`)
+  lines.push(`  AND c.LastPurchaseDate < DATEADD(day, -${f.lapsedDays}, GETDATE())`)
+  if (f.engagedDays !== null) lines.push(`  AND c.LastOpenDate >= DATEADD(day, -${f.engagedDays}, GETDATE())`)
   return lines.join('\n')
 }
 
@@ -193,8 +195,8 @@ export const qaCases: QaCase[] = [
     symptom: 'A full-width hero image spills past the screen or keeps a stretched height.',
     cause: 'The image has a fixed pixel width and no rule telling it to scale down.',
     fix: 'Pair the width attribute (for Outlook) with width:100%, max-width, and height:auto.',
-    before: `<img src="hero.jpg" width="600" height="200" alt="Fall roast">`,
-    after: `<img src="hero.jpg" width="600" alt="Fall roast"
+    before: `<img src="hero.jpg" width="600" height="200" alt="Fall wine picks">`,
+    after: `<img src="hero.jpg" width="600" alt="Fall wine picks"
      style="display:block;width:100%;max-width:600px;height:auto;border:0;">`,
     lang: 'html',
     preview: {
@@ -228,14 +230,14 @@ export const qaCases: QaCase[] = [
     before: `<a href="https://example.com/shop"
    style="display:inline-block;padding:14px 28px;
           background:#b45309;color:#fff;border-radius:6px;">
-  Shop the blend
+  Shop the picks
 </a>`,
     after: `<table role="presentation"><tr>
   <td bgcolor="#b45309"
       style="background:#b45309;border-radius:6px;padding:14px 28px;">
     <a href="https://example.com/shop"
        style="color:#fff;text-decoration:none;display:inline-block;">
-      Shop the blend
+      Shop the picks
     </a>
   </td>
 </tr></table>`,
@@ -293,4 +295,24 @@ export const journeyNodes: JourneyNode[] = [
   { id: 'exit', type: 'Exit', title: 'Exit', summary: 'Journey ends. No further sends.',
     data: 'None', logic: 'Record the exit reason for reporting. Hand off to other programs.',
     maps: 'Journey goal / exit criteria.' },
+]
+
+/* ---------- Production module map (structure only, no client content) ---------- */
+export const productionModules: { name: string; role: string; scope: 'shared' | 'varies' }[] = [
+  { name: 'Preheader and spacing', role: 'Hidden preview text and fixed spacer blocks between modules.', scope: 'shared' },
+  { name: 'Loyalty strip', role: 'Slim utility row above the logo with its own mobile spacing classes.', scope: 'shared' },
+  { name: 'Logo', role: 'Linked logo cell that stays centered on mobile.', scope: 'shared' },
+  { name: 'Five-item navigation', role: 'Desktop nav row with a separate mobile nav, toggled by visibility classes.', scope: 'shared' },
+  { name: 'Hero / headline', role: 'Image or live-text headline for the campaign message.', scope: 'varies' },
+  { name: 'Offer or product rows', role: 'Single or two-column blocks that stack on mobile, with a bulletproof button.', scope: 'varies' },
+  { name: 'Value-prop strip', role: 'Short supporting message row, used when the campaign calls for it.', scope: 'varies' },
+  { name: 'Link and legal footer', role: 'Footer links, disclaimers, and unsubscribe. Identical on every send.', scope: 'shared' },
+]
+
+export const productionFacts = [
+  'Each email is a vertical stack of Content Builder blocks separated by spacer rows.',
+  'One 600px container and one max-width:600px breakpoint drive the mobile layout.',
+  'Shared class names handle mobile text size, centering, and show/hide behavior.',
+  'Outlook conditionals and VML namespaces are in the shell, with lang set on the html tag.',
+  'In the samples I reviewed, the top (preheader through navigation) and bottom (footer) modules were the same. Only the hero and offer modules changed.',
 ]
